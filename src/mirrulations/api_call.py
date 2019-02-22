@@ -7,7 +7,7 @@ with open(home + '/.env/regulationskey.txt') as f:
     key = f.readline().strip()
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='api_call.log', format=FORMAT)
+logging.basicConfig(filename='api_call.log', filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'CLIENT'}
 logger = logging.getLogger('tcpserver')
 

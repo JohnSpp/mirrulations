@@ -9,6 +9,7 @@ import logging
 import shutil
 import mirrulations.config as config
 import tempfile
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 # These variables are specific to the current implementation
@@ -20,9 +21,12 @@ with open(home + '/.env/regulationskey.txt') as f:
     client_id = f.readline().strip()
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='client.log', format=FORMAT)
+log_file = 'client.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': client_id}
 logger = logging.getLogger('tcpserver')
+handler = RotatingFileHandler('client_log', maxBytes=20, backupCount=5)
+
 
 client_health_url = "https://hc-ping.com/457a1034-83d4-4a62-8b69-c71060db3a08"
 
