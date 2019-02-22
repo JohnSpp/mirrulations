@@ -12,7 +12,8 @@ import re
 import mirrulations.doc_filter as df
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='docs_filter.log', filemode='w', format=FORMAT)
+log_file = 'docs_filter.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = { 'clientip': '192.168.0.1', 'user': 'FILTERS'}
 logger = logging.getLogger('tcpserver')
 

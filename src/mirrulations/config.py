@@ -2,7 +2,8 @@ import json
 import logging
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='client.log', filemode='w', format=FORMAT)
+log_file = 'client.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'CONFIG'}
 logger = logging.getLogger('tcpserver')
 

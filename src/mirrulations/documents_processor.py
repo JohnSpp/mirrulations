@@ -11,7 +11,8 @@ with open(home + '/.env/regulationskey.txt') as f:
 
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='documents_processor.log', filemode='w', format=FORMAT)
+log_file = 'documents_processor.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': client_id}
 logger = logging.getLogger('tcpserver')
 

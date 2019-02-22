@@ -10,7 +10,8 @@ import mirrulations.config as config
 
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='endpoints_log.log', filemode='w', format=FORMAT)
+log_file = 'endpoints_log.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'FLASK'}
 logger = logging.getLogger('tcpserver')
 

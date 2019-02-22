@@ -5,7 +5,8 @@ import time
 import logging
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='redis_log.log', filemode='w', format=FORMAT)
+log_file = 'redis_log.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'REDIS'}
 logger = logging.getLogger('tcpserver')
 
