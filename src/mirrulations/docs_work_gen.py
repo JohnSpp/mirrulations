@@ -9,7 +9,8 @@ import mirrulations.endpoints as endpoints
 import logging
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='redis_log.log', format=FORMAT)
+log_file = 'docs_work_gen.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'REDIS'}
 logger = logging.getLogger('tcpserver')
 

@@ -9,7 +9,8 @@ import io
 
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='endpoints_log.log', format=FORMAT)
+log_file = 'endpoints.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'FLASK'}
 logger = logging.getLogger('tcpserver')
 
@@ -156,6 +157,3 @@ def generate_json(work_list):
 
 if __name__ == '__main__':
     app.run('0.0.0.0', '8080')
-
-
-

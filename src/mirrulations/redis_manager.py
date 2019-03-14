@@ -5,7 +5,8 @@ import time
 import logging
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='redis_log.log', format=FORMAT)
+log_file = 'redis_manager.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'REDIS'}
 logger = logging.getLogger('tcpserver')
 
@@ -412,7 +413,7 @@ class RedisManager:
         """
         Removes a job from the "progress" queue
         :param key: The key of the job that is to be removed
-        :return: 
+        :return:
         """
         logger.info('Removing job from progress queue...')
         logger.debug('Call Successful: %s', 'remove_job_from_progress: call successful', extra=d)

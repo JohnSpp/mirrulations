@@ -4,7 +4,8 @@ import time
 import logging
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
-logging.basicConfig(filename='expire.log', format=FORMAT)
+log_file = 'expire.log'
+logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'EXPIRE'}
 logger = logging.getLogger('tcpserver')
 
