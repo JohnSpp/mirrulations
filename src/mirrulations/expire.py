@@ -8,6 +8,7 @@ log_file = 'expire.log'
 logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'EXPIRE'}
 logger = logging.getLogger('tcpserver')
+logger.setLevel(logging.DEBUG)
 
 r = RedisManager(redis.Redis())
 

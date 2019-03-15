@@ -13,6 +13,7 @@ log_file = 'endpoints.log'
 logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'FLASK'}
 logger = logging.getLogger('tcpserver')
+logger.setLevel(logging.DEBUG)
 
 app = Flask(__name__)
 

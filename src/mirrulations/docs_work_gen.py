@@ -13,6 +13,7 @@ log_file = 'docs_work_gen.log'
 logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'REDIS'}
 logger = logging.getLogger('tcpserver')
+logger.setLevel(logging.DEBUG)
 
 
 def monolith():

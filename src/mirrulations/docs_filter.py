@@ -13,6 +13,7 @@ log_file = 'docs_filter.log'
 logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = { 'clientip': '192.168.0.1', 'user': 'FILTERS'}
 logger = logging.getLogger('tcpserver')
+logger.setLevel(logging.DEBUG)
 
 """
 This program does the validation of data from the docs jobs and then creates doc jobs using that data

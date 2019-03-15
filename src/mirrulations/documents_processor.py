@@ -14,6 +14,7 @@ log_file = 'documents_processor.log'
 logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': client_id}
 logger = logging.getLogger('tcpserver')
+logger.setLevel(logging.DEBUG)
 
 
 def documents_processor(urls, job_id, client_id):

@@ -8,6 +8,7 @@ log_file = 'api_call_management.log'
 logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = {'clientip': '192.168.0.1', 'user': 'CLIENT'}
 logger = logging.getLogger('tcpserver')
+logger.setLevel(logging.DEBUG)
 
 
 def api_call_manager(url):

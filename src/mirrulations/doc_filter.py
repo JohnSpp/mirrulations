@@ -13,6 +13,7 @@ log_file = 'doc_filter.log'
 logging.basicConfig(filename=log_file, filemode='w', format=FORMAT)
 d = { 'clientip': '192.168.0.1', 'user': 'FILTERS'}
 logger = logging.getLogger('tcpserver')
+logger.setLevel(logging.DEBUG)
 
 """
 This program does the validation of data from the doc jobs and then saves that data locally
